@@ -34,8 +34,7 @@ elem.startBtn.setAttribute('disabled', '');
 
 const date = new Date();
 
-const flatpickr = require('flatpickr');
-flatpickr(elem.input, {
+const options = {
   enableTime: true,
   time_24hr: true,
   defaultDate: new Date(),
@@ -68,8 +67,8 @@ flatpickr(elem.input, {
       }
     }
   },
-});
-
+};
+flatpickr('#datetime-picker', options);
 function mathTime(value) {
   elem.days.textContent = addLeadingZero(convertMs(value).days);
   elem.hours.textContent = addLeadingZero(convertMs(value).hours);
