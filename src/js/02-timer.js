@@ -4,6 +4,7 @@ import Notiflix from 'notiflix';
 import { Report } from 'notiflix/build/notiflix-report-aio';
 
 const elem = {
+  input: document.querySelector('#datetime-picker'),
   startBtn: document.querySelector('button[data-start]'),
   timer: document.querySelector('.timer'),
   days: document.querySelector('span[data-days]'),
@@ -34,7 +35,7 @@ elem.startBtn.setAttribute('disabled', '');
 const date = new Date();
 
 const flatpickr = require('flatpickr');
-flatpickr('#datetime-picker', {
+flatpickr(elem.input, {
   enableTime: true,
   time_24hr: true,
   defaultDate: new Date(),
